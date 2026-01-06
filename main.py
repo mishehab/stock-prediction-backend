@@ -11,7 +11,7 @@ app = FastAPI(title="Apple Stock Prediction API")
 # --- THE FIX: ALLOW CROSS-ORIGIN REQUESTS ---
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Allows ALL websites to access your API (Easiest for testing)
+    allow_origins=["*"],  
     allow_credentials=True,
     allow_methods=["*"],  # Allows all methods (POST, GET, etc.)
     allow_headers=["*"],
@@ -79,3 +79,4 @@ def predict_stock(payload: StockInput):
 @app.get("/")
 def home():
     return {"message": "Stock Prediction API is Running"}
+
